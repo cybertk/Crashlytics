@@ -1,0 +1,14 @@
+language: objective-c
+script:
+- echo "pass"
+after_script:
+- zip -r -9 Crashlytics.framework.zip Crashlytics.framework
+deploy:
+  provider: releases
+  api_key:
+    secure: TPsH88cCuiLlTqaKHa8QO62wXWxCgAJPjQs9yRppsa2pgZw6pPi9dedXsn8E6E0YnShFxVLdIFyj3Y82HfV1WSMXzgLU2BtBACZHouKOv025CAHIs/jVYCaSXKj47J/Lzc76+5etgmIV5Ycl/KizyEI0Ba92sj/BDF0pUKbQXS6XLeGmA4Qul6A46wacHOcMVMiHG2eMhHq24VNx3awuMp8PjsCEAXo/51SoCqk27pWhOOS3ETZPUVJjY5IVWDrBWWpRECC4b7mI13W2dm0L5X89qHrGqP1ZNIsz9g355mrSI9hJ8RPesFluiDMWE4oWNnz+4SdnNHym1Lx4pybYCDfSVAQaXdaR9D48CQ7W8mnOmJuPHTM74tf++eFIHdR9GvqTEgUBDPtR0P5YyoVvH/InkX752hrbIzddVXX9AHYWaPKjVJ29ors1G+p8rjl/iYoAVvEw89QOM7y4UiGGqdX5Bc2h937T1HITxTowX+adhDGv+kIrEl6wtROQhfAldvYIICQtueBlTkWKwAe3wmuOzyzVN8Ffodm1gJv22lAfGUfJ0UqpL0DLNPIwtn4m6P+cbQPNUOi63Cp6r7NbRQhlewkK0e7pqW10h8GeGGhC8+IMdJ1WSoVRqeRlZ6m95HiFjY1JKTdO/6ejudZXRwvcs8nBJnMWtuDwq0vm+rI=
+  file: Crashlytics.framework.zip
+  skip_cleanup: true
+  on:
+    repo: cybertk/crashlytics
+    tags: true
