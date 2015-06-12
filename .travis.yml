@@ -1,7 +1,7 @@
 language: objective-c
 script:
 - echo "pass"
-after_script:
+before_deploy:
 - zip -r -9 Crashlytics.framework.zip Crashlytics.framework
 deploy:
   provider: releases
