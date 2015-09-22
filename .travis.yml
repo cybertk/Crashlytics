@@ -11,5 +11,5 @@ deploy:
   - Crashlytics.framework.zip
   skip_cleanup: true
   on:
-    repo: cybertk/crashlytics
+    repo: cybertk/Crashlytics
     tags: true
